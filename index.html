@@ -12,13 +12,17 @@
 <body>
 
   <div class="location">
-    <h1 class="location-timezone">Timezone</h1>
+    <div class="tooltip">
+      <h1 class="location-timezone">Timezone</h1>
+      <span class="tooltiptext">Your timezone</span>
+    </div>
     <canvas class="icon" width="128" height="128"></canvas>
   </div>
   <div class="temperature">
-    <div class="degree-section">
+    <div class="degree-section tooltip">
+      <span class="tooltiptext">Press to change value</span>
       <h2 class="temperature-degree"></h2>
-      <span>C</span>
+      <span class="degree-letter">C</span>
     </div>
     <div class="temperature-description">It's cold </div>
   </div>
