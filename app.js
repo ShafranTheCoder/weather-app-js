@@ -12,7 +12,7 @@ window.addEventListener('load', () => {
       long = position.coords.longitude;
       lat = position.coords.latitude;
 
-      const proxy = 'http://cors-anywhere.herokuapp.com/';
+      const proxy = 'https://cors-anywhere.herokuapp.com/';
 
       const api = `${proxy}https://api.darksky.net/forecast/9293dd9ef6c5d8124b0b15a786be6651/${lat},${long}`;
       fetch(api).then(response => {
@@ -25,11 +25,11 @@ window.addEventListener('load', () => {
             summary,
             icon
           } = data.currently; //Set DOM Elements from the API
-          temperatureDegree.textContent = temperature;
-          temperatureDescription.textContent = summary;
-          locationTimezone.textContent = data.timezone;
           ///formula for celc
           let celcius = (temperature - 32) * (5 / 9);
+          temperatureDegree.textContent = Math.floor(celcius);
+          temperatureDescription.textContent = summary;
+          locationTimezone.textContent = data.timezone;
           //set icons 
           setIcons(icon, document.querySelector('.icon'));
           // Farenheit to Cels
